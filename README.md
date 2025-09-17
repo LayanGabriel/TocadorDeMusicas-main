@@ -2,7 +2,6 @@
 
 ![React Native](https://img.shields.io/badge/React_Native-0.72-blue)
 ![Expo](https://img.shields.io/badge/Expo-49.0.0-brightgreen)
-![License](https://img.shields.io/badge/License-MIT-yellow)
 
 Um aplicativo mobile em **React Native** para adicionar, gerenciar e reproduzir músicas localmente. Permite criar playlists personalizadas, tocar músicas, remover ou adicionar faixas e acompanhar o progresso da reprodução.
 
