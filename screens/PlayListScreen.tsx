@@ -306,6 +306,25 @@ const proxima = async () => {
           <Feather name="shuffle" size={25} color="#000000ff" />
         </TouchableOpacity>
       </View>
+      <TouchableOpacity
+        style={styles.clearButton}
+        onPress={async () => {
+          // Para o som se estiver tocando
+          if (som) {
+            await som.unloadAsync();
+            setSom(null);
+            setTocando(false);
+            setCurrentTrackIndex(0);
+          }
+
+          // Limpa a lista e remove todas do DB
+          lista.forEach((musica) => remover(musica.id));
+          setLista([]);
+        }}
+      >
+        <Feather name="trash-2" size={28} color="#fff" />
+        <Text style={styles.clearButtonText}>Limpar Tudo</Text>
+      </TouchableOpacity>
     </ImageBackground>
   );
 }
@@ -378,4 +397,21 @@ export const styles = StyleSheet.create({
   removeButton: {
     marginLeft: 10
   },
+  clearButton: {
+  position: "absolute",
+  bottom: 20,
+  right: 20, // agora fica à direita
+  backgroundColor: "rgba(255,0,0,0.7)",
+  paddingVertical: 10,
+  paddingHorizontal: 15,
+  borderRadius: 30,
+  flexDirection: "row",
+  alignItems: "center",
+  zIndex: 10,
+},
+clearButtonText: {
+  color: "#fff",
+  fontWeight: "bold",
+  marginLeft: 8,
+},
 });
